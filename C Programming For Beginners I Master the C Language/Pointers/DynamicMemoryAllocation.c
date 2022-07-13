@@ -1,0 +1,48 @@
+/*
+    -whenever you define a variable in C, the compiler automatically allocates the correct amount of storage for you based on the data type
+
+    -it is frequently desirable to be able to dynamically allocate storage while a program is running
+
+    -if you have a progrma that is designed to read in a set of data from a file into an array in memoery, you have three choices
+        -define the array to contain the maximum number of possible elements at compile time
+        -use a variable-length array to dimension the size of the array at runtime
+        -allocate the array dynamically using one of C's memory allocation routines    
+*/
+
+/*
+    Dynamic memory allocation
+
+    -with the first approach, you  have to define you array to contain the maximum number of elements that would be read into the array
+
+    int dataArray[1000];
+
+    -the data file cannot contain more that 1000 elements, if it does, your program will not work
+        -If it is larger that 1000 you must go back to the program, change the size to be larger and recompile it
+        -no matter what value you select, you always have the chance of running into the same problem again in the future
+    
+    -using the dynamic memory allocation functions, you can get storage as you need it
+        -this approach enables you to allocate memory as the program is executing
+
+    -dynamic memory allocation depends on the concept of a pointer and provides a strong incentive to use pointers in your code
+
+    -dynamic memory allocation allows memoery for storing data to be allocated dynamically when your program executes
+        -allocating memory dynamically is possible only because you have pointers available
+    
+    -the majority of production programs will use dynamic memory allocation
+
+    -allocating data dynamically allows you to create pointers at runtime that are just large enough to hold the amount of data you require for the task
+*/
+
+/*
+    Heap vs. Stack
+
+    -dynamic memory allocation reserves space in a memory area called the heap
+
+    -the stack is another place where memory is allocated
+        -function arguments and local variables in a function are stored here
+        -when the execution of a function ends, the space allocated to store arguments and local variables is freed.
+
+    -the memory in the heap is different in that it is controlled by you
+        -when you allocate memory on the heap, it is up to you to keep track of when the memory you have allocated is no longer requires
+        -you must free the space you have allocated to allow it to be reused
+*/
